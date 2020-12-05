@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 
@@ -34,17 +35,7 @@ class QuoteController extends Controller
         ], 201);
 
     }
-    // return a single quote
-    function getQuote($id) {
-        if (Quote::where('id', $id)->exists()) {
-            $quote = Quote::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
-            return response($quote, 200);
-        } else {
-            return response()->json([
-                "message" => "quote not found"
-            ], 404);
-        }
-    }
+
     // Update a quote
     function updateQuote(Request $request, $id) {
         if (Quote::where('id', $id)->exists()) {

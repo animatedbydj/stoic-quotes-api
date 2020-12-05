@@ -12,4 +12,7 @@ class Author extends Model
     {
         return $this->hasMany(Quote::class);
     }
+    public function getRouteKeyName() {
+        return 'name';
+    }
 }
