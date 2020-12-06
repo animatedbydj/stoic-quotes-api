@@ -9,13 +9,13 @@ class AuthorController extends Controller
 {
     function createAuthor(Request $request) {
 
-        $author = new Author;
-        $author->name = $request->name;
-        $author->save();
-
-        return response()->json([
-            "message" => "Author record created"
-        ], 201);
+//        $author = new Author;
+//        $author->name = $request->name;
+//        $author->save();
+//
+//        return response()->json([
+//            "message" => "Author record created"
+//        ], 201);
 
     }
 

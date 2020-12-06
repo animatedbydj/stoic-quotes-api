@@ -23,50 +23,50 @@ class QuoteController extends Controller
     }
     // Create a new quote
     function createQuote(Request $request) {
-        $quote = new Quote;
-        $quote->author_id = $request->author_id;
-        $quote->body = $request->body;
-        $quote->save();
-
-        return response()->json([
-            "message" => "quote record created",
-            "quote" => $quote->body,
-            "author" => $quote->author
-        ], 201);
+//        $quote = new Quote;
+//        $quote->author_id = $request->author_id;
+//        $quote->body = $request->body;
+//        $quote->save();
+//
+//        return response()->json([
+//            "message" => "quote record created",
+//            "quote" => $quote->body,
+//            "author" => $quote->author
+//        ], 201);
 
     }
 
     // Update a quote
     function updateQuote(Request $request, $id) {
-        if (Quote::where('id', $id)->exists()) {
-            $quote = Quote::find($id);
-            $quote->author_id = is_null($request->author_id) ? $quote->author_id : $request->author_id;
-            $quote->body = is_null($request->body) ? $quote->body : $request->body;
-            $quote->save();
-
-            return response()->json([
-                "message" => "records updated successfully"
-            ], 200);
-        } else {
-            return response()->json([
-                "message" => "quote not found"
-            ], 404);
-        }
+//        if (Quote::where('id', $id)->exists()) {
+//            $quote = Quote::find($id);
+//            $quote->author_id = is_null($request->author_id) ? $quote->author_id : $request->author_id;
+//            $quote->body = is_null($request->body) ? $quote->body : $request->body;
+//            $quote->save();
+//
+//            return response()->json([
+//                "message" => "records updated successfully"
+//            ], 200);
+//        } else {
+//            return response()->json([
+//                "message" => "quote not found"
+//            ], 404);
+//        }
     }
     // delete a quote
     function deleteQuote ($id) {
-        if(Quote::where('id', $id)->exists()) {
-            $quote = Quote::find($id);
-            $quote->delete();
-
-            return response()->json([
-                "message" => "records deleted"
-            ], 202);
-        } else {
-            return response()->json([
-                "message" => "Quote not found"
-            ], 404);
-        }
+//        if(Quote::where('id', $id)->exists()) {
+//            $quote = Quote::find($id);
+//            $quote->delete();
+//
+//            return response()->json([
+//                "message" => "records deleted"
+//            ], 202);
+//        } else {
+//            return response()->json([
+//                "message" => "Quote not found"
+//            ], 404);
+//        }
     }
     // return a random quote
     function getRandomQuote() {
