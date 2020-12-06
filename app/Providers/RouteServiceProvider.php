@@ -61,7 +61,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         RateLimiter::for('quotes', function (Request $request) {
-            return Limit::perMinute(20);
+            return Limit::perMinute(60);
         });
     }
 }
